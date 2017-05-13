@@ -15,7 +15,6 @@ FullWindow::FullWindow(QWidget *parent)
 
 void FullWindow::start()
 {
-    /*
     auto screens = QGuiApplication::screens();
     QList<QPixmap> scrs;
     int w = 0, h = 0, p = 0;
@@ -33,9 +32,6 @@ void FullWindow::start()
       p += scr.width();
     }
     m_loadPixmap = final;
-    */
-
-    m_loadPixmap = QPixmap::grabWindow(QApplication::desktop()->winId());
 
     this->setCursor(Qt::CrossCursor);
 }
@@ -55,13 +51,66 @@ void FullWindow::mouseReleaseEvent(QMouseEvent *event)
     if (event->button() == Qt::LeftButton)
     {
         QImage image = m_loadPixmap.toImage();
-        QColor rgb = image.pixel(QCursor::pos());
-        QString hex = "#" +QString::number(rgb.red(), 16).toUpper() + QString::number(rgb.green(), 16).toUpper() + QString::number(rgb.blue(), 16).toUpper();
+        QColor color = image.pixel(QCursor::pos());
+        QString hex = rgbTohex(color);
+        //QString hex = "#" +QString::number(rgb.red(), 16).toUpper() + QString::number(rgb.green(), 16).toUpper() + QString::number(rgb.blue(), 16).toUpper();
 
         emit sendSignal(hex);
 
         this->setVisible(false);
     }
+}
+
+QString FullWindow::rgbTohex(const QColor &color)
+{
+    QString hex = "#";
+
+    int r, g, b;
+    int x1, x2;
+    char s[2];
+
+    r = color.red();
+    g = color.green();
+    b = color.blue();
+
+    x1 = color.red() % 16;
+    x2 = color.red() / 16;
+
+    if (x1 > 9)
+        s[0] = x1-10 + 65;
+    else
+        s[0] = x1 + 48;
+    if (x2 > 9)
+        s[1] = x2 - 10 + 65;
+    else
+        s[1] = x2 + 48;
+    hex += QString("%1%2").arg(s[1]).arg(s[0]);
+
+    x1 = color.green() % 16;
+    x2 = color.red() / 16;
+    if (x1 > 9)
+        s[0] = x1-10 + 65;
+    else
+        s[0] = x1 + 48;
+    if (x2 > 9)
+        s[1] = x2 - 10 + 65;
+    else
+        s[1] = x2 + 48;
+    hex += QString("%1%2").arg(s[1]).arg(s[0]);
+
+    x1 = color.blue() % 16;
+    x2 = color.blue() / 16;
+    if (x1 > 9)
+        s[0] = x1-10 + 65;
+    else
+        s[0] = x1 + 48;
+    if (x2 > 9)
+        s[1] = x2 - 10 + 65;
+    else
+        s[1] = x2 + 48;
+    hex += QString("%1%2").arg(s[1]).arg(s[0]);
+
+    return hex;
 }
 
 void FullWindow::paintEvent(QPaintEvent *event)

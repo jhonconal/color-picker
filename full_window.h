@@ -20,6 +20,8 @@ private:
     //void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
 
+    QString rgbTohex(const QColor &color);
+
 signals:
     void sendSignal(QString hex);
 };
