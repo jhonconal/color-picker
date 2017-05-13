@@ -30,6 +30,8 @@ void FullWindow::start()
       p += scr.width();
     }
     m_loadPixmap = final;
+
+    this->setCursor(Qt::CrossCursor);
 }
 
 void FullWindow::keyPressEvent(QKeyEvent *event)
@@ -49,7 +51,9 @@ void FullWindow::mouseReleaseEvent(QMouseEvent *event)
         QImage image = m_loadPixmap.toImage();
         QColor rgb = image.pixel(QCursor::pos());
         QString hex = "#" +QString::number(rgb.red(), 16).toUpper() + QString::number(rgb.green(), 16).toUpper() + QString::number(rgb.blue(), 16).toUpper();
+
         emit sendSignal(hex);
+
         hide();
     }
 }
