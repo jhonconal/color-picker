@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 
     MainWindow window;
     window.setWindowTitle("Color");
-    window.setFixedSize(200, 200);
+    window.setFixedSize(150, 150);
     window.show();
 
     return app.exec();

@@ -1,4 +1,6 @@
 #include "full_window.h"
+#include <QApplication>
+#include <QDesktopWidget>
 #include <QKeyEvent>
 #include <QPainter>
 #include <QGuiApplication>
@@ -13,6 +15,7 @@ FullWindow::FullWindow(QWidget *parent)
 
 void FullWindow::start()
 {
+    /*
     auto screens = QGuiApplication::screens();
     QList<QPixmap> scrs;
     int w = 0, h = 0, p = 0;
@@ -30,6 +33,9 @@ void FullWindow::start()
       p += scr.width();
     }
     m_loadPixmap = final;
+    */
+
+    m_loadPixmap = QPixmap::grabWindow(QApplication::desktop()->winId());
 
     this->setCursor(Qt::CrossCursor);
 }
@@ -38,7 +44,7 @@ void FullWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Escape)
     {
-        hide();
+        this->setVisible(false);
     }
 }
 
@@ -54,7 +60,7 @@ void FullWindow::mouseReleaseEvent(QMouseEvent *event)
 
         emit sendSignal(hex);
 
-        hide();
+        this->setVisible(false);
     }
 }
 

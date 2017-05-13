@@ -7,6 +7,8 @@
 MainWindow::MainWindow(QMainWindow *parent)
     : QMainWindow(parent)
 {
+    setWindowFlags( Qt::WindowStaysOnTopHint);
+
     fullWindow = new FullWindow(this);
     centWidget = new QWidget();
     layout = new QVBoxLayout();
@@ -31,11 +33,12 @@ void MainWindow::initUI()
     edit->setFocusPolicy(Qt::NoFocus);
     edit->setText("#FFFFFF");
     edit->setStyleSheet("background-color: #404244; color: #FFFFFF; border: 1px solid #D3D3D4; border-radius: 3px;");
+    edit->setFixedWidth(100);
 }
 
 void MainWindow::on_colorButton_clicked()
 {
-    fullWindow->show();
+    fullWindow->setVisible(true);
     fullWindow->start();
 }
 
