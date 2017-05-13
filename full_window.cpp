@@ -8,6 +8,7 @@ FullWindow::FullWindow(QWidget *parent)
     : QWidget(parent)
 {
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    setWindowState(Qt::WindowActive | Qt::WindowFullScreen);
 }
 
 void FullWindow::start()
@@ -35,7 +36,7 @@ void FullWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Escape)
     {
-        close();
+        hide();
     }
 }
 
@@ -49,7 +50,7 @@ void FullWindow::mouseReleaseEvent(QMouseEvent *event)
         QColor rgb = image.pixel(QCursor::pos());
         QString hex = "#" +QString::number(rgb.red(), 16).toUpper() + QString::number(rgb.green(), 16).toUpper() + QString::number(rgb.blue(), 16).toUpper();
         emit sendSignal(hex);
-        close();
+        hide();
     }
 }
 

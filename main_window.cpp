@@ -35,8 +35,7 @@ void MainWindow::initUI()
 
 void MainWindow::on_colorButton_clicked()
 {
-    fullWindow->setWindowFlags(Qt::Window);
-    fullWindow->showFullScreen();
+    fullWindow->show();
     fullWindow->start();
 }
 
