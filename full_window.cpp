@@ -40,6 +40,7 @@ void FullWindow::start()
     m_loadPixmap = final;
 
     this->setCursor(Qt::CrossCursor);
+    this->setWindowState(Qt::WindowActive | Qt::WindowFullScreen);
 }
 
 void FullWindow::keyPressEvent(QKeyEvent *event)
