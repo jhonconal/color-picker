@@ -52,8 +52,8 @@ void FullWindow::mouseReleaseEvent(QMouseEvent *event)
     {
         QImage image = m_loadPixmap.toImage();
         QColor color = image.pixel(QCursor::pos());
-        QString hex = rgbTohex(color);
-        //QString hex = "#" +QString::number(rgb.red(), 16).toUpper() + QString::number(rgb.green(), 16).toUpper() + QString::number(rgb.blue(), 16).toUpper();
+        //QString hex = rgbTohex(color);
+        QString hex = "#" +QString::number(color.red(), 16).toUpper() + QString::number(color.green(), 16).toUpper() + QString::number(color.blue(), 16).toUpper();
 
         emit sendSignal(hex);
 

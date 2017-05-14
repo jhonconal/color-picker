@@ -7,8 +7,6 @@
 MainWindow::MainWindow(QMainWindow *parent)
     : QMainWindow(parent)
 {
-    setWindowFlags( Qt::WindowStaysOnTopHint);
-
     fullWindow = new FullWindow(this);
     centWidget = new QWidget();
     layout = new QVBoxLayout();
