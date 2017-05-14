@@ -21,7 +21,7 @@ void Zoom::paintEvent(QPaintEvent *)
 void Zoom::showTips()
 {
     if (!this->isVisible())
-        this->show();
+        this->setVisible(true);
 
     QPoint movePos = cursor().pos();
     this->move(movePos.x() + 10, movePos.y() + 10);

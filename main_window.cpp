@@ -12,7 +12,6 @@ MainWindow::MainWindow(QMainWindow *parent)
     layout = new QVBoxLayout();
     colorLabel = new ColorLabel();
     edit = new QLineEdit();
-    state = false;
 
     layout->addWidget(colorLabel, 0, Qt::AlignCenter);
     layout->addWidget(edit, 0, Qt::AlignCenter);
