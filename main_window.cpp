@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QMouseEvent>
 #include <QPaintEvent>
+#include <QxtGlobalShortcut>
 
 MainWindow::MainWindow(QMainWindow *parent)
     : QMainWindow(parent)
