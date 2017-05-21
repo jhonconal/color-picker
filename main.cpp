@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
     w.setFixedSize(150, 150);
     w.show();
 
-    w.move ((QApplication::desktop()->width() - w.width()) / 2, (QApplication::desktop()->height() - w.height()) / 2);
+    w.move ((QApplication::desktop()->width() - w.width()) / 2,
+    		(QApplication::desktop()->height() - w.height()) / 2);
 
     return app.exec();
 }

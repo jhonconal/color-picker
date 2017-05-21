@@ -7,6 +7,7 @@ ColorLabel::ColorLabel(QLabel *parent)
 
     this->setStyleSheet("background-color: #FFFFFF;" + defaultStyle);
     this->setFixedSize(100, 50);
+    this->setMouseTracking(true);
 }
 
 void ColorLabel::background_color(const QString &text)
@@ -20,4 +21,9 @@ void ColorLabel::mouseReleaseEvent(QMouseEvent *event)
     Q_UNUSED(event)
 
     emit clicked();
+}
+
+void ColorLabel::mouseMoveEvent(QMouseEvent *event)
+{
+    this->setCursor(Qt::CrossCursor);
 }

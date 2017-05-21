@@ -6,7 +6,7 @@ Zoom::Zoom(QWidget *parent)
     this->setFixedSize(59, 59);
 }
 
-void Zoom::getColor(QColor &color)
+void Zoom::takeColor(QColor &color)
 {
     m_color = color;
 }

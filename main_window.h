@@ -27,7 +27,6 @@ private:
     ColorLabel *colorLabel;
     QLineEdit *edit;
     QPixmap m_loadPixmap;
-    bool state;
 
     void initUI();
 };

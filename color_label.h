@@ -17,6 +17,7 @@ public:
 
 protected:
       virtual void mouseReleaseEvent(QMouseEvent *event);
+      void mouseMoveEvent(QMouseEvent *event);
 
 signals:
     void clicked();

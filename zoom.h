@@ -12,7 +12,7 @@ class Zoom : public QLabel
 public:
     Zoom(QWidget *parent = 0);
 
-    void getColor(QColor &color);
+    void takeColor(QColor &color);
     void showTips();
 
 private:

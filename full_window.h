@@ -10,8 +10,9 @@ class FullWindow : public QWidget
 
 public:
     FullWindow(QWidget *parent = 0);
+    ~FullWindow();
 
-    QPixmap m_loadPixmap;
+    QPixmap pixmap;
 
     void start();
 
@@ -22,8 +23,6 @@ private:
     void paintEvent(QPaintEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
-
-    QString rgbTohex(const QColor &color);
 
 signals:
     void sendSignal(QString hex);
