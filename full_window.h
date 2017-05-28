@@ -2,7 +2,6 @@
 #define FULLWINDOW_H
 
 #include <QWidget>
-#include "zoom.h"
 
 class FullWindow : public QWidget
 {
@@ -17,10 +16,11 @@ public:
     void start();
 
 private:
-    Zoom *m_zoom;
+    QImage image;
 
-    void keyPressEvent(QKeyEvent *event);
+protected:
     void paintEvent(QPaintEvent *event);
+    void keyPressEvent(QKeyEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
 

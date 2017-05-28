@@ -14,8 +14,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QMainWindow *parent = 0);
 
-    void paintEvent(QPaintEvent *event);
-
 private slots:
     void on_colorButton_clicked();
     void setColor(QString hex);
@@ -29,6 +27,9 @@ private:
     QPixmap m_loadPixmap;
 
     void initUI();
+
+protected:
+    void paintEvent(QPaintEvent *event);
 };
 
 #endif

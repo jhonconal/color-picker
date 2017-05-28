@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.setWindowTitle("Color");
     w.setFixedSize(150, 150);
+    w.setWindowIcon(QIcon("icon.svg"));
     w.show();
 
     w.move ((QApplication::desktop()->width() - w.width()) / 2,
