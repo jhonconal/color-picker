@@ -33,9 +33,12 @@ MainWindow::MainWindow(QMainWindow *parent)
     rgbLayout->addWidget(rgbEdit);
     rgbLayout->addWidget(copyRgbButton);
 
+    layout->addStretch();
     layout->addWidget(colorLabel, 0, Qt::AlignCenter);
+    layout->addStretch();
     layout->addLayout(hexLayout);
     layout->addLayout(rgbLayout);
+    layout->addStretch();
 
     centWidget->setLayout(layout);
     this->setCentralWidget(centWidget);
