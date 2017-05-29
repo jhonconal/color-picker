@@ -3,10 +3,10 @@
 ColorLabel::ColorLabel(QLabel *parent)
     : QLabel(parent)
 {
-    defaultStyle = "border: 1px solid #F5F5F5; border-radius: 1px;";
+    defaultStyle = "border: 1px solid #F5F5F5; border-radius: 5px;";
 
-    this->setStyleSheet("background-color: #FFFFFF;" + defaultStyle);
-    this->setFixedSize(100, 50);
+    this->setStyleSheet("background-color: #404244;" + defaultStyle);
+    this->setFixedSize(150, 50);
     this->setMouseTracking(true);
 }
 

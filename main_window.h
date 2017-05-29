@@ -6,6 +6,7 @@
 #include <QLineEdit>
 #include "color_label.h"
 #include "full_window.h"
+#include <QPushButton>
 
 class MainWindow : public QMainWindow
 {
@@ -16,15 +17,23 @@ public:
 
 private slots:
     void on_colorButton_clicked();
-    void setColor(QString hex);
+    void setColor(QColor color);
+    void on_rgbButton_clicked();
+    void on_hexButton_clicked();
 
 private:
     FullWindow *fullWindow;
     QWidget *centWidget;
     QVBoxLayout *layout;
     ColorLabel *colorLabel;
-    QLineEdit *edit;
+    QLineEdit *hexEdit;
+    QLineEdit *rgbEdit;
     QPixmap m_loadPixmap;
+
+    QLabel *hexLabel;
+    QLabel *rgbLabel;
+    QPushButton *copyHexButton;
+    QPushButton *copyRgbButton;
 
     void initUI();
 

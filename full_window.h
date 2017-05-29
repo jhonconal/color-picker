@@ -25,7 +25,7 @@ protected:
     void mouseMoveEvent(QMouseEvent *event);
 
 signals:
-    void sendSignal(QString hex);
+    void setColor(QColor hex);
 };
 
 #endif // FULLWINDOW_H

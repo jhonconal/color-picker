@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.setWindowTitle("Color");
-    w.setFixedSize(150, 150);
+    w.setFixedSize(170, 160);
     w.setWindowIcon(QIcon("icon.svg"));
     w.show();
 

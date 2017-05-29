@@ -14,11 +14,7 @@ CONFIG += link_pkgconfig
 CONFIG += c++11
 
 # Input
-HEADERS += main_window.h color_label.h \
-    full_window.h \
-    zoom.h
-SOURCES += main.cpp main_window.cpp color_label.cpp \
-    full_window.cpp \
-    zoom.cpp
+HEADERS += main_window.h color_label.h full_window.h zoom.h
+SOURCES += main.cpp main_window.cpp color_label.cpp full_window.cpp zoom.cpp
 
 QMAKE_CXXFLAGS += -g
