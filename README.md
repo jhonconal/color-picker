@@ -4,7 +4,7 @@ A simple color picker.
 
 ### Build dependencies
 
-`sudo apt install libdtkbase-dev libdtkwidget-dev libdtkutil-dev`
+`sudo apt install g++ qt5-default`
 
 ### Runtime dependencies
 
