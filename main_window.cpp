@@ -51,6 +51,11 @@ MainWindow::MainWindow(QMainWindow *parent)
     connect(copyRgbButton, SIGNAL(clicked()), this, SLOT(on_rgbButton_clicked()));
 }
 
+MainWindow::~MainWindow()
+{
+    delete fullWindow;
+}
+
 void MainWindow::initUI()
 {
     hexEdit->setEnabled(false);

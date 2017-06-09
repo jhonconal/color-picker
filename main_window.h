@@ -14,6 +14,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QMainWindow *parent = 0);
+    ~MainWindow();
 
 private slots:
     void on_colorButton_clicked();
