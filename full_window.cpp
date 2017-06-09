@@ -10,7 +10,6 @@ FullWindow::FullWindow(QWidget *parent)
 {
     setWindowFlags(Qt::X11BypassWindowManagerHint | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint | Qt::Tool);
     setMouseTracking(true);
-    setAttribute(Qt::WA_TranslucentBackground, true);
     
     this->setCursor(Qt::BlankCursor);
 }
@@ -77,7 +76,7 @@ void FullWindow::paintEvent(QPaintEvent *event)
     QPixmap zoomPix = pix.scaled(pix.width() * 4, pix.height() * 4);
 
     QPainter painter(this);
-    //painter.drawPixmap(0, 0, pixmap);
+    painter.drawPixmap(0, 0, pixmap);
 
     int x = qMax(0, pos.x() - (zoomPix.width() / 2));
     int y = qMax(0, pos.y() - (zoomPix.height() / 2));
