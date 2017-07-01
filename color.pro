@@ -18,3 +18,5 @@ HEADERS += main_window.h color_label.h full_window.h
 SOURCES += main.cpp main_window.cpp color_label.cpp full_window.cpp
 
 QMAKE_CXXFLAGS += -g
+
+RESOURCES = resource.qrc
