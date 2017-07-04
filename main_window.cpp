@@ -49,6 +49,12 @@ MainWindow::MainWindow(QMainWindow *parent)
     connect(fullWindow, SIGNAL(setColor(QColor)), this, SLOT(setColor(QColor)));
     connect(copyHexButton, SIGNAL(clicked()), this, SLOT(on_hexButton_clicked()));
     connect(copyRgbButton, SIGNAL(clicked()), this, SLOT(on_rgbButton_clicked()));
+
+    connect(hexEdit, &QLineEdit::returnPressed, this, [=] {
+        QColor color(hexEdit->text());
+        colorLabel->background_color(hexEdit->text());
+        rgbEdit->setText(QString::number(color.red()) + "," + QString::number(color.green()) + "," + QString::number(color.blue()));
+    });
 }
 
 MainWindow::~MainWindow()
@@ -58,7 +64,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::initUI()
 {
-    hexEdit->setEnabled(false);
     rgbEdit->setEnabled(false);
 
     hexEdit->setText("#404244");
