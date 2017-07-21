@@ -54,7 +54,7 @@ void PickerWindow::paintEvent(QPaintEvent *e)
             .arg(color.green(), 2, 16, QLatin1Char('0'))
             .arg(color.blue(), 2, 16, QLatin1Char('0')).toUpper();
 
-    QRect textRect = painter.boundingRect(QRect(x, y + zoomPix.height(), 10, 10), Qt::TextWordWrap, hex);
+    QRect textRect = painter.boundingRect(QRect(x+5, y + zoomPix.height(), 10, 10), Qt::TextWordWrap, hex);
     textRect.adjust(0, 2, 2, 2);
 
     painter.setBrush(Qt::white);
