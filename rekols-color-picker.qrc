@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>qss/style.qss</file>
+    <file>image/magnifier.png</file>
+    <file>image/center_rect.png</file>
+  </qresource>
+</RCC>

@@ -1,19 +1,20 @@
+#include "mainwindow.h"
 #include <QApplication>
 #include <QDesktopWidget>
-#include "main_window.h"
+#include "utils.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
+    QApplication a(argc, argv);
 
     MainWindow w;
-    w.setWindowTitle("Color");
-    w.setFixedSize(170, 160);
-    app.setWindowIcon(QIcon(":/image/icon.svg"));
+    w.setFixedSize(250, 180);
+    w.setWindowTitle("Color Picker");
+    w.move((QApplication::desktop()->width() - w.width()) / 2,
+           (QApplication::desktop()->height() - w.height()) / 2);
     w.show();
 
-    w.move ((QApplication::desktop()->width() - w.width()) / 2,
-    		(QApplication::desktop()->height() - w.height()) / 2);
+    qApp->setStyleSheet(Utils::getFileContent(":/qss/style.qss"));
 
-    return app.exec();
+    return a.exec();
 }
