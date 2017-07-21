@@ -55,7 +55,7 @@ void Zoom::showMagnifier(QPoint pos)
 {
     this->show();
 
-    this->move(pos);
+    this->move(pos.x(), pos.y());
 
     update();
 }

@@ -14,6 +14,9 @@ PickerWindow::PickerWindow(QWidget *parent)
 
     //setCursor(Qt::BlankCursor);
 
+    QCursor cursor = QCursor(QPixmap(":/image/start_mouse.png"), 0, 0);
+    setCursor(cursor);
+
     zoom->hide();
 }
 
