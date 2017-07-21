@@ -2,7 +2,6 @@
 #define PICKERWINDOW_H
 
 #include <QWidget>
-#include "zoom.h"
 
 class PickerWindow : public QWidget
 {
@@ -23,7 +22,6 @@ protected:
 private:
     QPixmap m_pixmap;
     QImage image;
-    Zoom *zoom;
 
 signals:
     void finished(QColor color);

@@ -17,11 +17,9 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     colorview.cpp \
     pickerwindow.cpp \
-    utils.cpp \
-    zoom.cpp
+    utils.cpp
 
 HEADERS  += mainwindow.h \
     colorview.h \
     pickerwindow.h \
-    utils.h \
-    zoom.h
+    utils.h
