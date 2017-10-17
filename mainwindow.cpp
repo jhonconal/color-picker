@@ -71,6 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
     initUI();
 
     connect(pickerButton, &QPushButton::clicked, this, &MainWindow::pickerButtonClicked);
+    connect(colorView, &ColorView::clicked, this, &MainWindow::pickerButtonClicked);
     connect(copyButton, &QPushButton::clicked, this, &MainWindow::copyButtonClicked);
     connect(pickerWindow, &PickerWindow::finished, this, &MainWindow::pickerFinished);
 }
